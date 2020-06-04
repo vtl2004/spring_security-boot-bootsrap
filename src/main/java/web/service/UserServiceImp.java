@@ -40,14 +40,7 @@ public class UserServiceImp implements UserService {
     @Transactional
     @Override
     public void updateUser(User user) {
-    User user1 = userRepository.findUserById(user.getId());
-    user1.setUsername(user.getUsername());
-    user1.setPassword(user.getPassword());
-    user1.setFirst_name(user.getFirst_name());
-    user1.setLast_name(user.getLast_name());
-    user1.setEmail(user.getEmail());
-    user1.setRoles(user.getRoles());
 
-        userRepository.save(user1);
+        userRepository.save(user);
     }
 }

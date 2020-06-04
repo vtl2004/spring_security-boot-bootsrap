@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -20,19 +20,31 @@
     <div class="row">
         <div class="col-sm-2">
             <br>
-            <ul class="nav nav-pills flex-column">
+            <ul  class="nav nav-pills flex-column">
+                <!--********************************************************-->
                 <li class="nav-item" >
+                    <a  class="nav-link" href="/admin/users">Admin</a>
+                </li>
+
+
+
+                <!--********************************************************-->
+                <!--
+                <li class="nav-item" >
+
                     <a class="nav-link" href="/admin/users">Admin</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/user">User</a>
-                </li>
+                </li>-->
             </ul>
         </div>
         <div class="col-sm-10 px-5 bg-light" style="height: 100vh">
             <br>
             <h1>User page</h1>
-            Hello <span th:text="${username}"></span>!
+
+
+            <span th:text="${username}"></span>!
         </div>
     </div>
 </div>

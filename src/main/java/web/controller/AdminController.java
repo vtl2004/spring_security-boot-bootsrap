@@ -37,6 +37,7 @@ public class AdminController {
         model.addAttribute("username", username);
         model.addAttribute("userlist", userService.findAllUsers());
         model.addAttribute("roles", roleService.findAllRoles());
+        model.addAttribute("user_role", authentication.getAuthorities());
         return "userlist_page";
     }
 
