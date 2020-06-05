@@ -29,6 +29,10 @@
 
                     <a  class="nav-link" href="/admin/users">Admin</a>
                 </li>
+                <li class="nav-item" sec:authorize="hasAnyAuthority('user')">
+
+                    <a  class="nav-link active" href="/user">User</a>
+                </li>
 
 
 

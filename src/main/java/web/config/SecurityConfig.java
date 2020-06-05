@@ -15,15 +15,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import web.config.handler.LoginSuccessHandler;
+import web.service.UserDetailsServiceImpl;
+
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private UserDetailsService userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
     private AuthenticationSuccessHandler authenticationSuccessHandler;
 
-    public SecurityConfig(@Qualifier("userDetailsServiceImpl") UserDetailsService userDetailsService,
+    public SecurityConfig( UserDetailsServiceImpl userDetailsService,
                           AuthenticationSuccessHandler authenticationSuccessHandler) {
         this.userDetailsService = userDetailsService;
         this.authenticationSuccessHandler = authenticationSuccessHandler;
